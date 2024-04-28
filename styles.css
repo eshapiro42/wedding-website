@@ -139,7 +139,6 @@ select {
     font-weight: 900;
     font-style: normal;
     font-variation-settings: "wdth" 900;
-    line-height: 0.8;
 }
 
 .section h1 {
@@ -152,6 +151,10 @@ select {
 
 .section h3 {
     font-size: var(--h3-font-size);
+}
+
+.section a:link {
+    /* color: rgb(85, 26, 139); */
 }
 
 .navbar {
@@ -183,6 +186,7 @@ select {
     text-decoration: none;
     text-align: center;
     transform: rotate(-90deg);
+    
 }
 
 #home-link {
@@ -266,6 +270,14 @@ button[type="submit"]:hover {
     opacity: 0.9;
 }
 
+#name1 {
+    margin-bottom: -10px;
+}
+
+#name2 {
+    margin-top: -16px;
+}
+
 @media (max-width: 768px) {
     .venue-layout {
         flex-direction: column;
@@ -277,5 +289,21 @@ button[type="submit"]:hover {
 
     .venue-details {
         padding: 0;
+    }
+
+    :root {
+        --body-font-size: 1rem;
+        --h1-font-size: 2.5rem;
+        --h2-font-size: 1.6rem;
+        --h3-font-size: 1.3rem;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    .background {
+        max-width: 90%;
+        max-height: 90%;    
     }
 }

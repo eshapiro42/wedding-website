@@ -154,7 +154,7 @@ select {
 }
 
 .section a:link {
-    /* color: rgb(85, 26, 139); */
+    color: rgb(85, 26, 139);
 }
 
 .navbar {

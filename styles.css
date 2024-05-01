@@ -27,6 +27,7 @@ body {
 }
 
 input,
+textarea,
 button,
 select {
     font-family: "Playfair", serif;

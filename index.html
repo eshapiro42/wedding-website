@@ -34,7 +34,7 @@
             <div class="background bg2"></div>
             <div class="section-content">
                 <h1>RSVP</h1>
-                <form id="rsvpForm" action="https://formspree.io/f/xvoelpwj" method="POST">
+                <form id="rsvpForm" action="https://formspree.io/f/xvoelpwj" method="POST" onsubmit="submitForm(event)">
                     <div class="form-group">
                         <label for="attending">Can you attend?</label>
                         <select id="attending" name="attending" required>
@@ -115,12 +115,32 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
+
+        // Handle RSVP form submission
+        function submitForm(event) {
+            event.preventDefault();
+            var formData = new FormData(event.target);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://formspree.io/f/xvoelpwj", true);
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    alert("Your RSVP has been received!");
+                    event.target.reset();
+                } else {
+                    alert("There was an error submitting your RSVP. Please try again later.");
+                }
+            };
+            xhr.onerror = function() {
+                alert("There was an error submitting your RSVP. Please try again later.");
+            };
+            xhr.send(formData);
+        }
     </script>
 </body>
 

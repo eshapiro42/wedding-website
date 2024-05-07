@@ -52,6 +52,7 @@ select {
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -365,10 +366,6 @@ button[type="submit"]:hover {
 
     .travel-carousel-viewport {
         gap: 10px;
-    }
-
-    .travel-item {
-        width: 70vw;
     }
 }
 

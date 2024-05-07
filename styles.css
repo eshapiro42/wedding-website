@@ -5,6 +5,8 @@
     --h1-font-size: 4rem;
     --h2-font-size: 2.2rem;
     --h3-font-size: 1.8rem;
+    --body-background-color: #fff1d6;
+    --purple-color: rgb(85, 26, 139);
 }
 
 body,
@@ -23,7 +25,7 @@ html {
 }
 
 body {
-    background-color: #fff1d6;
+    background-color: var(--body-background-color);
 }
 
 input,
@@ -50,6 +52,12 @@ select {
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
 }
 
 .section {
@@ -59,9 +67,16 @@ select {
     align-items: center;
     min-height: 100vh;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     position: relative;
     overflow: hidden;
     font-size: 1.4rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.section::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -95,6 +110,10 @@ select {
 }
 
 .bg5 {
+    background-image: url('wedding-invite-leaves.svg');
+}
+
+.bg6 {
     background-image: url('wedding-invite-leaves-2.svg');
 }
 
@@ -155,7 +174,7 @@ select {
 }
 
 a:link {
-    color: rgb(85, 26, 139);
+    color: var(--purple-color);
 }
 
 .navbar {
@@ -187,22 +206,24 @@ a:link {
     text-decoration: none;
     text-align: center;
     transform: rotate(-90deg);
-    
+}
+
+.initials {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+}
+
+.initials a {
+    text-decoration: none;
+    color: black;
 }
 
 #home-link {
     font-family: "Playfair Display", serif;
     font-weight: 900;
-}
-
-@media screen and (min-width: 768px) {
-    .navbar {
-        display: block;
-    }
-
-    .container {
-        margin-left: 120px;
-    }
 }
 
 #rsvpForm {
@@ -245,10 +266,26 @@ button[type="submit"]:hover {
     background-color: rgb(42, 42, 42, 0.8);
 }
 
+.venue-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 10px;
+    background-color: color-mix(in srgb, transparent 95%, var(--purple-color) 5%);
+    border-radius: 20px;
+}
+
+.lodging-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 10px;
+    background-color: color-mix(in srgb, transparent 95%, var(--purple-color) 5%);
+    border-radius: 20px;
+}
+
 .venue-layout {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 120px;
     align-items: center;
 }
 
@@ -261,7 +298,10 @@ button[type="submit"]:hover {
 
 .venue-details {
     flex: 0.7;
-    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 40px;
 }
 
 .venue-photo img {
@@ -279,19 +319,34 @@ button[type="submit"]:hover {
     margin-top: -16px;
 }
 
+.travel-carousel {
+    overflow: hidden;
+}
+
+.travel-carousel-viewport {
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.travel-item {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 400px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    padding: 20px;
+    background-color: color-mix(in srgb, transparent 95%, var(--purple-color) 5%);
+    border-radius: 20px;
+    font-size: 16pt;
+    user-select: text;
+    text-align: left;
+}
+
 @media (max-width: 768px) {
-    .venue-layout {
-        flex-direction: column;
-    }
-
-    .venue-photos {
-        display: none;
-    }
-
-    .venue-details {
-        padding: 0;
-    }
-
     :root {
         --body-font-size: 1rem;
         --h1-font-size: 2.5rem;
@@ -306,5 +361,38 @@ button[type="submit"]:hover {
     .background {
         max-width: 90%;
         max-height: 90%;    
+    }
+
+    .travel-carousel-viewport {
+        gap: 10px;
+    }
+
+    .travel-item {
+        width: 70vw;
+    }
+}
+
+@media (max-width: 1240px) {
+    .venue-layout {
+        flex-direction: column;
+    }
+
+    .venue-photos {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (min-height: 630px) {
+    .navbar {
+        display: block;
+    }
+
+    .initials {
+        display: block;
+    }
+
+    .container {
+        margin-left: 120px;
+        padding-right: 120px;
     }
 }

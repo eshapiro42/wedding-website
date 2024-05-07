@@ -332,6 +332,7 @@ button[type="submit"]:hover {
     gap: 40px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    justify-content: space-evenly;
 }
 
 .travel-item {

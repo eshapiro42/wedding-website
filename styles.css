@@ -345,8 +345,11 @@ button[type="submit"]:hover {
     background-color: color-mix(in srgb, transparent 95%, var(--purple-color) 5%);
     border-radius: 20px;
     font-size: 16pt;
-    user-select: text;
     text-align: left;
+}
+
+.travel-item p {
+    user-select: text;
 }
 
 @media (max-width: 768px) {

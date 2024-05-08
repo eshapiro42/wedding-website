@@ -280,6 +280,8 @@ button[type="submit"]:hover {
     flex-basis: 0;
     flex-grow: 1;
     padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
     background-color: color-mix(in srgb, transparent 95%, var(--purple-color) 5%);
     border-radius: 20px;
 }
@@ -319,6 +321,18 @@ button[type="submit"]:hover {
 
 #name2 {
     margin-top: -16px;
+}
+
+#lodging-section {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#lodging-section p {
+    width: 100%;
+    max-width: 800px;
 }
 
 .travel-carousel {

@@ -215,7 +215,7 @@ a:link {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 20px;
+    padding: 10px;
 }
 
 .initials a {
@@ -226,6 +226,21 @@ a:link {
 #home-link {
     font-family: "Playfair Display", serif;
     font-weight: 900;
+    padding: 10px;
+}
+
+#home-link:hover,
+.navbar a:hover {
+    background-color: color-mix(in srgb, transparent 95%, var(--purple-color) 5%);
+    border-radius: 20px;
+}
+
+.navbar a:active {
+    font-weight: 800;
+}
+
+#home-link:active {
+    font-weight: 700;
 }
 
 #rsvpForm {

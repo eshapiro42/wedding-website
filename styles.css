@@ -55,6 +55,7 @@ select {
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    gap: 100px;
 }
 
 .container::-webkit-scrollbar {
@@ -64,13 +65,14 @@ select {
 .section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    justify-content: safe center;
+    align-items: safe center;
+    min-height: 100%;
+    height: fit-content;
+    overflow-y: scroll;
     scroll-snap-align: start;
     scroll-snap-stop: always;
     position: relative;
-    overflow: hidden;
     font-size: 1.4rem;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -79,7 +81,6 @@ select {
 .section::-webkit-scrollbar {
     display: none;
 }
-
 
 .background {
     position: absolute;
@@ -151,6 +152,7 @@ select {
     position: relative;
     z-index: 1;
     width: 100%;
+    height: fit-content;
 }
 
 .section h1,
@@ -305,7 +307,7 @@ button[type="submit"]:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 120px;
-    align-items: center;
+    align-items: safe center;
 }
 
 .venue-photos {
@@ -342,7 +344,7 @@ button[type="submit"]:hover {
     width: fit-content;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: safe center;
 }
 
 #lodging-section p {
